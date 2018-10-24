@@ -1,0 +1,104 @@
+
+
+<form class='searchForm'>
+  
+  <div class='search'>
+    {{ data.search }}
+  </div>
+
+  <input style='border: 2px solid lightblue' onfocus="this.style.background = 'lightblue'" onblur="this.style.background = 'white'" 
+  class='nameBox' placeholder='Name...' type="text" name='name' 
+  [(ngModel)]='formData.name'>
+
+</form>
+
+<div id='searchFromName' class='searchFormAnswer'>
+  Name: {{ formData.name }}
+</div>
+<br>
+
+<!-- <div><br>
+  <div>
+    planet: {{ planets }}
+  </div>
+  name: {{ characters }}
+</div> -->
+
+<div class="planet-title">
+  {{ planet }}
+</div>
+<div class="planets-container">
+  <div *ngFor='let plan of planets' class="planets">
+    <div class="planets-info">
+      name: {{ plan.name }}
+    </div>
+    <hr>
+    <div class="planets-info">
+      terrain: {{ plan.terrain }}
+    </div>
+    <div class="planets-info">
+      population: {{ plan.population }}
+    </div>
+    <div class="planets-info">
+      planet: {{ plan.url }}
+    </div>
+  </div>
+</div>
+
+<div class="people-title">
+  {{ people }}
+</div>
+<div class='people-container'>
+  <div *ngFor='let char of characters' class='people'>
+    <div class='people-info'>
+      name: {{ char.name }},  
+    </div>
+    <hr>
+    <div class='people-info'>
+      height: {{ char.height }}m,`
+    </div>
+    <div class='people-info'>
+      mass: {{ char.mass }}kg,
+    </div>
+    <div class='people-info'>
+      hair color: {{ char.hair_color }},
+    </div>
+    <div class='people-info'>
+      eye color: {{ char.eye_color }}
+    </div>
+    <div class='people-info'>
+      <div>
+        homeworld: {{ char.homeworld }} 
+      </div>
+    </div>
+    <div class="people-info">
+      species: {{ char.species }}
+    </div>
+    <div class="people-info">
+      character: {{ char.url }}
+    </div>
+    <div class="people-info">
+      starships: {{ char.starships }}
+    </div>
+  </div>
+</div>
+
+<h2>
+  {{ data.content }}
+</h2>
+
+<h1>
+  {{ title }}
+</h1>
+
+<h2>
+  {{ subtitle }}
+</h2>
+
+<p>
+  home page
+</p>
+
+<h2>
+  {{ data.header }}
+</h2>

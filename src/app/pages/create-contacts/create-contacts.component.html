@@ -1,0 +1,36 @@
+<h1>
+  {{ title }}
+</h1>
+
+<form action="">
+  First Name: <br> <input placeholder='First Name...' type="text" name='fname' 
+  [(ngModel)]='formData.fname'>
+  <br>
+  Last Name: <br> <input placeholder='Last Name...' type="text" name='lname'
+  [(ngModel)]='formData.lname'>
+  <br>
+  Password: <br> <input placeholder='Password...' type="text" name='password'
+  [(ngModel)]='formData.password'>
+  <br>
+  Repeat Password: <br> <input placeholder='Repeat Password...' type="text" name='repeatpassword'
+  [(ngModel)]='formData.repeatpassword'>
+</form>
+
+<br>
+<div [class]='formData.name === "Jeff" ? "test" : "" ' >
+  First Name: {{ formData.fname }}
+</div>
+  <div>
+  Last Name: {{ formData.lname }}
+</div>
+  <div>
+  Password: {{ formData.password }}
+</div>
+  <div>
+  Repeat Password: {{ formData.repeatpassword }}
+</div>
+
+<br><br>
+<!-- banana in a box -->
+<!-- <button (click)='submit()' [disabled]='true'>Submit</button> -->
+<button (click)='submit()' [class]='formData.class'>Submit</button>
