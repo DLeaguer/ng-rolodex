@@ -33,4 +33,17 @@ export class BackendService {
     console.log('planet', planet)
     this.planets.push(planet);
   }
+
+  register(data) {
+    return Promise.resolve({});
+  }
+
+  login(data) {
+    return Promise.resolve({ username: data.username });
+
+  }
+
+  logout() {
+    return Promise.resolve({});
+  }
 }

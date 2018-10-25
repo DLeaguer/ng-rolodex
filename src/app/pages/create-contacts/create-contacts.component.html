@@ -1,4 +1,42 @@
-<h1>
+<div class="page">
+  <h1>
+    {{ title }}
+  </h1>
+  
+  <div class="container">
+    <form action="">
+      <input type="text" name='name' placeholder="name..."
+      [(ngModel)]='formData.name' (keyup)='validateName()'> 
+      
+      <br><br>
+      <input type="text" name='email' placeholder="email..."
+      [(ngModel)]='formData.email' (keyup)='validateEmail()'>
+    </form>
+    
+    <div [class]='formData.name === "admin" ? "test" : "" ' >
+      {{ formData.name }}
+    </div>
+    <br>
+      <div>
+      {{ formData.email}}
+    
+    </div>
+    
+    
+    <br><br>
+    <!-- banana in a box -->
+    <!-- <button (click)='submit()' [disabled]='true'>Submit</button> -->
+    <button (click)='submit()' class='btn-submit' [disabled]='isDisabled()'>Submit</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- <h1>
   {{ title }}
 </h1>
 
@@ -33,4 +71,4 @@
 <br><br>
 <!-- banana in a box -->
 <!-- <button (click)='submit()' [disabled]='true'>Submit</button> -->
-<button (click)='submit()' [class]='formData.class'>Submit</button>
+<button (click)='submit()' [class]='formData.class'>Submit</button> -->

@@ -59,71 +59,87 @@ export class HomeComponent implements OnInit {
     homeworld: 'https://swapi.co/api/planets/12/',
    });
 
-    this.backend.getCharacter(1)
+   for(let i=1; i<11; i++){
+    this.backend.getCharacter(i)
     .then((data) => {
       console.log(data);
       this.characters.push(data)
     });
+   }
 
-    this.backend.getCharacter(11)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-
-    this.backend.getCharacter(10)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-
-    this.backend.getCharacter(20)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-
-    this.backend.getCharacter(14)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-
-    this.backend.getCharacter(4)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-
-    this.backend.getPlanet(1)
-    .then((data) => {
-      console.log(data);
-      this.planets.push(data)
-    })
-
-    this.backend.getPlanet(2)
-    .then((data) => {
-      console.log(data);
-      this.planets.push(data)
-    })
-
-    this.backend.getPlanet(20)
-    .then((data) => {
-      console.log(data);
-      this.planets.push(data)
-    })
-
-    this.backend.getPlanet(22)
-    .then((data) => {
-      console.log(data);
-      this.planets.push(data)
-    })
-
-    this.backend.getPlanet(28)
-    .then((data) => {
-      console.log(data);
-      this.planets.push(data)
-    })
+   for(let i=1; i<11; i++){
+     this.backend.getPlanet(i)
+     .then((data) => {
+       console.log(data);
+       this.planets.push(data)
+     })
+   }
   }
-
 }
+
+  //   this.backend.getCharacter(1)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getCharacter(11)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getCharacter(10)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getCharacter(20)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getCharacter(14)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getCharacter(4)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+
+  //   this.backend.getPlanet(1)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.planets.push(data)
+  //   })
+
+  //   this.backend.getPlanet(2)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.planets.push(data)
+  //   })
+
+  //   this.backend.getPlanet(20)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.planets.push(data)
+  //   })
+
+  //   this.backend.getPlanet(22)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.planets.push(data)
+  //   })
+
+  //   this.backend.getPlanet(28)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.planets.push(data)
+  //   })
+

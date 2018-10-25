@@ -1,18 +1,19 @@
 
-<ul>
-  <div id='titleHeaderContainer'>
-    <div id='titleHeader'>
-      <a routerLink="/" class='nameHeader'>R</a>
-      <a routerLink="/" class='nameHeader'>O</a>
-      <a routerLink="/" class='nameHeader'>L</a>
-      <a routerLink="/" class='nameHeader'>O</a>
-      <a routerLink="/" class='nameHeader'>D</a>
-      <a routerLink="/" class='nameHeader'>E</a>
-      <a routerLink="/" class='nameHeader'>X</a>
+<ul class='header-container'>
+  <div class='header-left'>
+    <div class='header-title'>
+      <a routerLink="/" class='header-letters'>ROLODEX</a>
+      <!-- <a routerLink="/" class='header-letters'>R</a>
+      <a routerLink="/" class='header-letters'>O</a>
+      <a routerLink="/" class='header-letters'>L</a>
+      <a routerLink="/" class='header-letters'>O</a>
+      <a routerLink="/" class='header-letters'>D</a>
+      <a routerLink="/" class='header-letters'>E</a>
+      <a routerLink="/" class='header-letters'>X</a> -->
     </div>
   </div>
 
-  <div class='divli'>
+  <div class='header-center'>
     <li>
       <a routerLink='/'>Home</a>
     </li>
@@ -29,9 +30,20 @@
       <a routerLink='/profile'>My Profile</a>
     </li>
   
-    <li>
-        <a routerLink='/logout'>Log Out</a>
-    </li>
+    <!-- <li>
+        <a routerLink='/login'>Login</a>
+    </li> -->
+  </div>
+
+  <div class="header-right">
+    <div class="logged-in" *ngIf="isLoggedIn()">
+      Welcome, {{user.username}}
+      <button (click)="logout()">Log Out</button>
+    </div>
+
+    <div class="logged-out" *ngIf=!user.loggedIn>
+      <button (click)="login()">Log In</button>
+    </div>
   </div>
 
 </ul>

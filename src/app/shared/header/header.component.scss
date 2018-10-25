@@ -1,39 +1,37 @@
 
-ul {
+// ul {
   // border: 1px solid red;
-  display: flex;
-  justify-content: flex-end;
-  padding: 15px 15px 15px 5px;
-  background-color: #ccc;
-  box-shadow: 3px 3px 15px 1px #7c7c7c;
+  // display: flex;
+  // justify-content: flex-end;
+  // padding: 15px 15px 15px 5px;
+  // background-color: #ccc;
+  // box-shadow: 3px 3px 15px 1px #7c7c7c;
   
-  #titleHeaderContainer {
-  }
-  
-  #titleHeader {
-    // border: 1px solid blue;
+  .header-title {
+    border: 1px solid blue;
     display: flex;
     flex-wrap: wrap;
-    width: 120%;
+    width: 100%;
     color: black;
+    // margin: 5%;
   }
   
-  .nameHeader {
+  .header-letters {
     // border: 1px solid #7c7c7c;
     font-size: 20px;
     color: black;
-    width: 13%;
+    // width: 14%;
   }
 
-  .divli {
-    // border: 1px solid plum;
+  .header-center {
+    border: 1px solid plum;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   li {
-    // border: 1px solid orange;
+    border: 1px solid orange;
     list-style-type: none;
     display: inline-block;
     margin-left: 8px;
@@ -42,11 +40,66 @@ ul {
   a {
     text-decoration: none;
     color: blue;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 15px;
+    // font-weight: bold;
 
     &:hover { 
       color: darken(salmon, 25%);
     }
+  }
+// }
+
+
+ul {
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+}
+
+// li {
+//   list-style-type: none;
+//   display: inline-block;
+//   margin-right: 15px;
+//   a { text-decoration: none; }
+// }
+
+.header-container {
+  // border: 1px solid blueviolet;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 15px 15px 15px 15px;
+  box-shadow: 3px 3px 15px 1px #7c7c7c;
+
+  // .header-left {
+  //   border: 1px solid hotpink;
+  //   margin: 0 8px;
+  //   // width: 100%;
+  // }
+
+  .header-right {
+    float: right;
+    margin: 0 8px;
+  }
+}
+
+.logged-in {
+  border: 1px solid blue;
+}
+
+button {
+  border: 0;
+  width: 60px;
+  padding: 3px 5px;
+  font-size: 12px;
+  color: white;
+  background-color: #1e5799;
+  border-radius: 5px;
+  margin-left: 15px;
+  &:hover {
+    background-color: lighten(#1e5799, 10%);
   }
 }

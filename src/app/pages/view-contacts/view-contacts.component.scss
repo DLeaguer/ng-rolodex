@@ -2,3 +2,86 @@
   color: red;
   background-color:  blue;
 }
+
+.searchForm {
+  margin-left: 10%;
+  width: 80%;
+}
+
+#searchFormName {
+  border: 1px solid blue;
+}
+
+#searchFormName:hover {
+}
+
+.searchFormAnswer {
+  margin-left: 10%;
+  width: 80%;
+  background-color: aliceblue;
+}
+
+.search {
+  // border: 1px solid blue;
+  font-size: 12px;
+}
+
+.nameBox {
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.people-container {
+  border: 1px solid greenyellow;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1% 10%;
+}
+
+.people-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.people {
+  // border: 1px solid seagreen;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+}
+
+.people-info {
+  // border: 1px solid fuchsia;
+  font-size: 12px;
+}
+
+.planet-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.planets-container {
+  border: 1px solid greenyellow;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1% 10%;
+}
+
+.planets {
+  // border: 1px solid seagreen;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+}
+
+.planets-info {
+  // border: 1px solid fuchsia;
+  font-size: 12px;
+}

@@ -11,8 +11,11 @@ import { ViewContactsComponent } from './pages/view-contacts/view-contacts.compo
 import { CreateContactsComponent } from './pages/create-contacts/create-contacts.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { LoginComponent } from './pages/login/login.component';
 
 import { BackendService } from './services/backend.service';
+import { SessionService } from './services/session.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { BackendService } from './services/backend.service';
     CreateContactsComponent,
     ProfileComponent,
     HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { BackendService } from './services/backend.service';
     HttpClientModule,
   ],
   providers: [
-    BackendService
+    BackendService,
+    SessionService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
