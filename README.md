@@ -32,7 +32,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Angular 2+ Exercise
 
-![homepage](.src/home.png?raw=true)
+![homepage](.github/home.png?raw=true)
+https://github.com/DLeaguer/ng-rolodex/issues/1
+https://user-images.githubusercontent.com/10203892/47584223-576abc00-d8f5-11e8-8cb7-84f04c598d79.png
 
 ## Setup the Server
 
