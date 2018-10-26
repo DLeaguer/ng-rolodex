@@ -32,7 +32,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Angular 2+ Exercise
 
-![homepage](.github/home.png?raw=true)
+![homepage](.src/home.png?raw=true)
 
 ## Setup the Server
 
