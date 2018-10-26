@@ -1,15 +1,15 @@
 
 
 <form class='searchForm'>
-  
+  <br>
   <div class='search'>
     {{ data.search }}
   </div>
 
-  <input style='border: 2px solid lightblue' onfocus="this.style.background = 'lightblue'" onblur="this.style.background = 'white'" 
+  <input style='border: 2px solid lightblue' onfocus="this.style.background = 'lightblue'"  onblur="this.style.background = 'white'" 
   class='nameBox' placeholder='Name...' type="text" name='name' 
   [(ngModel)]='formData.name'>
-
+  <input type="submit" class='search-submit'>
 </form>
 
 <div id='searchFromName' class='searchFormAnswer'>

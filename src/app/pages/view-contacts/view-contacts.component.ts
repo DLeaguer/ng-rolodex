@@ -6,7 +6,7 @@ import { BackendService } from '../../services/backend.service';
   templateUrl: './view-contacts.component.html',
   styleUrls: ['./view-contacts.component.scss']
 })
-export class ViewContactsComponent implements OnInit {
+export class ViewContactsComponent {
 
   planet: string = 'PLANETS';
   people: string = 'PEOPLE';
@@ -42,9 +42,9 @@ export class ViewContactsComponent implements OnInit {
     this.subtitle = subtitle;
 
     this.data.content = 'this.data.content in constructor'
-   }
+  //  }
 
-  ngOnInit() {
+  // ngOnInit() {
     this.characters = this.backend.characters;
     
     this.backend.addCharacters({ name: 'ed', height: 177, mass: 77, hair_color: 'black', eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',
@@ -75,6 +75,7 @@ export class ViewContactsComponent implements OnInit {
      })
    }
   }
+
   // title: string = 'View All Contacts';
   // formData: {
   //   name: string,
