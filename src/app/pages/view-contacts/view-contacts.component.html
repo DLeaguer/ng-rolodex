@@ -1,7 +1,68 @@
+<br><br>
+<div class="users-title">
+  {{ usersTitle }}
+</div>
+<br>
+<div class="users-container">
+  <div *ngFor='let use of users' class="users">
+    <div class="user-info">
+      username: {{ use[0].username }} 
+    </div>
+    <!-- <hr> -->
+    <div class="user-info">
+      name: {{ use.name }}
+    </div>
+    <div class="user-info">
+      email: {{ use.email }}
+    </div>
+    <div class="user-info">
+      address: {{ use.address }}
+    </div>
+  </div>
+</div>
 
-<div class="people-title">
+<br><br>
+<div class="contacts-title">
+  {{ contactsTitle }}
+</div>
+<br>
+<div class="contacts-container">
+  <div *ngFor='let con of contacts' class="contacts">
+    <div class="contact-info">
+      name: {{ con.name }}
+    </div>
+    <!-- <hr> -->
+    <div class="contact-info">
+      address: {{ con.address }}
+    </div>
+    <div class="contact-info">
+      mobile: {{ con.mobile }}
+    </div>
+    <div class="contact-info">
+      home: {{ con.home }}
+    </div>
+    <div class="contact-info">
+      work: {{ con.work }}
+    </div>
+    <div class="contact-info">
+      email: {{ con.email }}
+    </div>
+    <div class="contact-info">
+      twitter: {{ con.twitter }}
+    </div>
+    <div class="contact-info">
+      instagram: {{ con.instagram }}
+    </div>
+    <div class="contact-info">
+      github: {{ con.github }}
+    </div>
+  </div>
+</div>
+
+<!-- <div class="people-title">
   {{ people }}
 </div>
+
 <div class='people-container'>
   <div *ngFor='let char of characters' class='people'>
     <div class='people-info'>
@@ -56,7 +117,7 @@
       planet: {{ plan.url }}
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- <h1>

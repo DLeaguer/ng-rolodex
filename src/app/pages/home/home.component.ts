@@ -8,74 +8,73 @@ import { BackendService } from '../../services/backend.service';
 })
 export class HomeComponent implements OnInit {
 
-  planet: string = 'PLANETS';
-  people: string = 'PEOPLE';
-  title: string = 'title: single line output';
-  subtitle: string;
-  data: {
-    search: string,
-    header: string,
-    content: string,
-    class: string,
-  } = {
-    search: 'Search for a contact...',
-    header: 'data.header info',
-    content: 'data.content info',
-    class: 'search',
-  };
+  // planet: string = 'PLANETS';
+  // people: string = 'PEOPLE';
+  // title: string = 'title: single line output';
+  // subtitle: string;
+  // data: {
+  //   search: string,
+  //   header: string,
+  //   content: string,
+  //   class: string,
+  // } = {
+  //   search: 'Search for a contact...',
+  //   header: 'data.header info',
+  //   content: 'data.content info',
+  //   class: 'search',
+  // };
   
-  formData: {
-    name: string,
-    email: string,
-    class: string,
-  } = {
-    name: '',
-    email: '',
-    class: 'test',
-  }
+  // formData: {
+  //   name: string,
+  //   email: string,
+  //   class: string,
+  // } = {
+  //   name: '',
+  //   email: '',
+  //   class: 'test',
+  // }
 
-  planets: any[];
-  characters: any[];
+  // planets: any[];
+  // characters: any[];
 
   constructor(private backend: BackendService) {
-    const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
-    this.subtitle = subtitle;
+    // const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
+    // this.subtitle = subtitle;
 
-    this.data.content = 'this.data.content in constructor'
+    // this.data.content = 'this.data.content in constructor'
    }
 
   ngOnInit() {
-    this.characters = this.backend.characters;
+  //   this.characters = this.backend.characters;
     
-    this.backend.addCharacters({ name: 'ed', height: 177, mass: 77, hair_color: 'black', eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',
-    homeworld: 'https://swapi.co/api/planets/10/',
-   });
+  //   this.backend.addCharacters({ name: 'ed', height: 177, mass: 77, hair_color: 'black', eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',
+  //   homeworld: 'https://swapi.co/api/planets/10/',
+  //  });
     
-    this.planets = this.backend.planets;
+  //   this.planets = this.backend.planets;
 
-    this.backend.addPlanets({ name: 'Earth', terrain: 'oceans, mountains, grasslands, forests', population: '800 Billion', url: 'https://swapi.co/api/planets/1/'})
+  //   this.backend.addPlanets({ name: 'Earth', terrain: 'oceans, mountains, grasslands, forests', population: '800 Billion', url: 'https://swapi.co/api/planets/1/'})
     
-    this.characters.push({ name: 'baseem', height: 177, mass: 77, hair_color: 'black',  eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',
-    homeworld: 'https://swapi.co/api/planets/12/',
-   });
+  //   this.characters.push({ name: 'baseem', height: 177, mass: 77, hair_color: 'blonde',  eye_color: 'hazel-green', species: 'human', character: 'https://swapi.co/api/people/1/',
+  //   homeworld: 'https://swapi.co/api/planets/12/',
+  //  });
 
-   for(let i=1; i<11; i++){
-    this.backend.getCharacter(i)
-    .then((data) => {
-      console.log(data);
-      this.characters.push(data)
-    });
-   }
+  //  for(let i=1; i<11; i++){
+  //   this.backend.getCharacter(i)
+  //   .then((data) => {
+  //     console.log(data);
+  //     this.characters.push(data)
+  //   });
+  //  }
 
-   for(let i=1; i<11; i++){
-     this.backend.getPlanet(i)
-     .then((data) => {
-       console.log(data);
-       this.planets.push(data)
-     })
-   }
-  }
-}
+  //  for(let i=1; i<11; i++){
+  //    this.backend.getPlanet(i)
+  //    .then((data) => {
+  //      console.log(data);
+  //      this.planets.push(data)
+  //    })
+  //  }
+  // }
 
   //   this.backend.getCharacter(1)
   //   .then((data) => {
@@ -142,4 +141,5 @@ export class HomeComponent implements OnInit {
   //     console.log(data);
   //     this.planets.push(data)
   //   })
-
+  }
+}
