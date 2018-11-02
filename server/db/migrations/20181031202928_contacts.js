@@ -13,7 +13,7 @@ exports.up = function(knex, Promise) {
     table.string('instagram');
     table.string('github');
     //Create the column then add foreign key
-    table.integer('created_by').unsigned();
+    table.integer('created_by').unsigned().notNullable();
     table.foreign('created_by').references('user_id').inTable('users');
   })
 }
