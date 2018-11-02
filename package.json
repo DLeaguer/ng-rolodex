@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm rebuild node-sass & ng serve --host 0.0.0.0 & npx nodemon ./server/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "migrate": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex --knexfile ./server/knexfile.js migrate:latest",
+    "seed": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex --knexfile ./server/knexfile.js seed:run"
   },
   "private": true,
   "dependencies": {
@@ -20,11 +22,16 @@
     "@angular/platform-browser": "~7.0.0",
     "@angular/platform-browser-dynamic": "~7.0.0",
     "@angular/router": "~7.0.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bookshelf": "^0.13.3",
+    "connect-redis": "^3.4.0",
     "core-js": "^2.5.4",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "knex": "^0.15.2",
+    "nodemon": "^1.18.4",
     "pg": "^7.5.0",
     "pg-hstore": "^2.3.2",
     "rxjs": "~6.3.3",
@@ -50,5 +57,12 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.1"
-  }
+  },
+  "proxy": "http://localhost:8989",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
