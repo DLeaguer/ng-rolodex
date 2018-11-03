@@ -89,7 +89,7 @@ export class ViewContactsComponent {
     //users all
     this.backend.getAllUsers()
     .then(data => {
-      console.log('\n*** getAllUsers from view-contacts', data)
+      // console.log('\n*** getAllUsers from view-contacts', data)
       this.allUsers = data
     })
     .catch( err => {
@@ -99,7 +99,7 @@ export class ViewContactsComponent {
     //contacts all
     this.backend.getAllContacts()
     .then(data => {
-      console.log('\n*** getAllContacts from view-contacts', data)
+      // console.log('\n*** getAllContacts from view-contacts', data)
       this.allContacts = data
     })
     .catch( err => {

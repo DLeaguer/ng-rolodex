@@ -7,35 +7,43 @@ import { BackendService } from '../../services/backend.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  
+  value = ''
+  testNames: object[]
+  
+  usersTitle: string = 'USERS';
+  contactsTitle: string = 'CONTACTS';
   // planet: string = 'PLANETS';
   // people: string = 'PEOPLE';
   // title: string = 'title: single line output';
   // subtitle: string;
-  // data: {
-  //   search: string,
-  //   header: string,
-  //   content: string,
-  //   class: string,
-  // } = {
-  //   search: 'Search for a contact...',
-  //   header: 'data.header info',
-  //   content: 'data.content info',
-  //   class: 'search',
-  // };
+  data: {
+    search: string,
+    header: string,
+    content: string,
+    class: string,
+  } = {
+    search: 'Search for a contact...',
+    header: 'data.header info',
+    content: 'data.content info',
+    class: 'search',
+  };
   
-  // formData: {
-  //   name: string,
-  //   email: string,
-  //   class: string,
-  // } = {
-  //   name: '',
-  //   email: '',
-  //   class: 'test',
-  // }
+  formData: {
+    name: string,
+    email: string,
+    class: string,
+  } = {
+    name: '',
+    email: '',
+    class: 'test',
+  }
 
   // planets: any[];
   // characters: any[];
+  
+  allUsers: any
+  allContacts: any
 
   constructor(private backend: BackendService) {
     // const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
@@ -43,8 +51,66 @@ export class HomeComponent implements OnInit {
 
     // this.data.content = 'this.data.content in constructor'
    }
+   search = null;
+   existingContactsCards = null;
+   existingCards = null;
+   users: object[] = [];
+   charName = null;
+  
+   showHide() {
+    this.search = document.getElementById('search');
+    this.existingCards = document.getElementsByClassName('existingCards');
+    this.charName = document.getElementsByClassName('charName');
+    for (let i = 0; i < this.users.length; i++) {
+      if (this.charName[i].innerHTML.toString().toLowerCase().startsWith(this.search.value.toLowerCase())) {
+        this.existingCards[i].style.display = 'inline-block';
+      } else {
+        this.existingCards[i].style.display = 'none';
+      }
+      if (this.search.value === '') {
+        this.existingCards[i].style.display = 'none';
+      }
+    }
+    console.log(this.search.value)
+  }
 
   ngOnInit() {
+
+    this.users = this.backend.users;
+    if(this.users.length > 0) {
+      return
+    } else {
+      for(var i = 1; i <= 10; i++) {
+        this.backend.getUser(i)
+        .then(data => {
+          this.users.push(data)
+        })
+      }
+    }
+    // this.testNames = this.backend.testNames;
+
+    this.allUsers = this.backend.allUsers;
+    this.allContacts = this.backend.allContacts; 
+    
+    this.backend.getAllUsers()
+    .then(data => {
+      // console.log('\n*** getAllUsers from home', data)
+      this.allUsers = data
+    })
+    .catch( err => {
+      console.log('\n*** getAllUsers ERR from view-contacts', err)
+    })
+
+    //contacts all
+    this.backend.getAllContacts()
+    .then(data => {
+      // console.log('\n*** getAllContacts from home', data)
+      this.allContacts = data
+    })
+    .catch( err => {
+      console.log('\n*** getAllContacts ERR from view-contacts', err)
+    })
+
   //   this.characters = this.backend.characters;
     
   //   this.backend.addCharacters({ name: 'ed', height: 177, mass: 77, hair_color: 'black', eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',

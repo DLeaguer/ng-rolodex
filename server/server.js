@@ -33,6 +33,7 @@ app.get('/users/:user_id', (req, res) => {
   .where( {user_id} )
   .fetchAll()
   .then( items => {
+    console.log('items', items)
     console.log('items.serialize', items.serialize())
     res.json(items.serialize())
   })

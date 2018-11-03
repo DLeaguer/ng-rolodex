@@ -1,6 +1,6 @@
 
 ul {
-  border: 1px solid red;
+  // border: 1px solid red;
   margin: 0;
   padding: 0;
 }
@@ -25,7 +25,7 @@ ul {
   box-shadow: 3px 3px 15px 1px #7c7c7c;
   
   .header-title {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -34,21 +34,21 @@ ul {
   }
   
   .header-letters {
-    border: 1px solid #7c7c7c;
+    // border: 1px solid #7c7c7c;
     font-size: 20px;
     color: black;
     // width: 14%;
   }
 
   .header-center {
-    border: 1px solid plum;
+    // border: 1px solid plum;
     width: 100%;
     display: flex;
     justify-content: center;
   }
 
   li {
-    border: 1px solid orange;
+    // border: 1px solid orange;
     list-style-type: none;
     display: inline-block;
     margin-left: 8px;
@@ -74,7 +74,7 @@ ul {
 
 
   .header-left {
-    border: 1px solid hotpink;
+    // border: 1px solid hotpink;
     margin: 0 8px;
     // width: 100%;
   }
@@ -86,7 +86,7 @@ ul {
 }
 
 .logged-in, .logged-out {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   display: inline-block;
   width: 100%;
 }

@@ -18,6 +18,8 @@
 
 .search {
   // border: 1px solid blue;
+  margin-left: 20%;
+  width: 50%;
   font-size: 12px;
 }
 
@@ -33,7 +35,9 @@
 }
 
 .nameBox {
-  width: 100%;
+  margin-left: 20%;
+  width: 50%;
+  // width: 100%;
   
   &:focus, &:hover {
     background-color: lightblue; 
@@ -42,20 +46,30 @@
   
 }
 
-.people-container {
-  border: 1px solid greenyellow;
+.users-container {
+  // border: 1px solid greenyellow;
   display: flex;
   flex-wrap: wrap;
   margin: 1% 10%;
 }
 
-.people-title {
+.users-title {
   margin-left: 10%;
   font-weight: bold;
   color: green;
 }
 
-.people {
+.existingCards {
+  // border: 1px solid seagreen;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px #cccccc;
+}
+
+.users {
   // border: 1px solid seagreen;
   width: 260px;
   background-color: aliceblue;
@@ -63,25 +77,25 @@
   margin: 3%;
 }
 
-.people-info {
+.users-info {
   // border: 1px solid fuchsia;
   font-size: 12px;
 }
 
-.planet-title {
-  margin-left: 10%;
-  font-weight: bold;
-  color: green;
-}
-
-.planets-container {
-  border: 1px solid greenyellow;
+.contacts-container {
+  // border: 1px solid greenyellow;
   display: flex;
   flex-wrap: wrap;
   margin: 1% 10%;
 }
 
-.planets {
+.contacts-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.contacts {
   // border: 1px solid seagreen;
   width: 260px;
   background-color: aliceblue;
@@ -89,7 +103,59 @@
   margin: 3%;
 }
 
-.planets-info {
+.contacts-info {
   // border: 1px solid fuchsia;
   font-size: 12px;
 }
+
+// .people-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .people-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .people {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .people-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }
+
+// .planet-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .planets-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .planets {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .planets-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }
