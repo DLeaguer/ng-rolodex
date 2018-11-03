@@ -39,10 +39,10 @@ export class ViewContactsComponent {
   // planets: any[];
   // characters: any[];
 
-  users: any[]
-  contacts: any[]
-  allUsers: any[]
-  allContacts: any[]
+  users: any
+  contacts: any
+  allUsers: any
+  allContacts: any
 
   constructor(private backend: BackendService) {
 
@@ -65,31 +65,32 @@ export class ViewContactsComponent {
   //     this.characters.push(data)
   //   });
 
-    //users by id
-    this.backend.getUser(1)
-    .then((data) => {
-      console.log('\n*** getUsers[1] from view-contacts', data)
-      this.users.push(data)
-    })
-    .catch( err => {
-      console.log('\n**** getUsers[1] err from getUsers', err)
-    })
+    // //users by id
+    // this.backend.getUser(1)
+    // .then((data) => {
+    //   console.log('\n*** getUsers[1] from view-contacts', data)
+    //   this.users = data
 
-    //contacts by id
-    this.backend.getContact(1)
-    .then(data => {
-      console.log('\n*** getContacts[1] from view-contacts', data)
-      this.contacts.push(data)
-    })
-    .catch( err => {
-      console.log('\n*** getContacts[1] err from getContacts', err)
-    })
+    // })
+    // .catch( err => {
+    //   console.log('\n**** getUsers[1] err from getUsers', err)
+    // })
+
+    // //contacts by id
+    // this.backend.getContact(1)
+    // .then(data => {
+    //   console.log('\n*** getContacts[1] from view-contacts', data)
+    //   this.contacts = data
+    // })
+    // .catch( err => {
+    //   console.log('\n*** getContacts[1] err from getContacts', err)
+    // })
     
     //users all
     this.backend.getAllUsers()
     .then(data => {
       console.log('\n*** getAllUsers from view-contacts', data)
-      this.allUsers.push(data)
+      this.allUsers = data
     })
     .catch( err => {
       console.log('\n*** getAllUsers ERR from view-contacts', err)
@@ -99,7 +100,7 @@ export class ViewContactsComponent {
     this.backend.getAllContacts()
     .then(data => {
       console.log('\n*** getAllContacts from view-contacts', data)
-      this.allContacts.push(data)
+      this.allContacts = data
     })
     .catch( err => {
       console.log('\n*** getAllContacts ERR from view-contacts', err)

@@ -4,11 +4,11 @@
 </div>
 <br>
 <div class="users-container">
-  <div *ngFor='let use of users' class="users">
+  <div *ngFor='let use of allUsers' class="users">
     <div class="user-info">
-      username: {{ use[0].username }} 
+      username: {{ use.username }} 
     </div>
-    <!-- <hr> -->
+    <hr>
     <div class="user-info">
       name: {{ use.name }}
     </div>
@@ -27,11 +27,11 @@
 </div>
 <br>
 <div class="contacts-container">
-  <div *ngFor='let con of contacts' class="contacts">
+  <div *ngFor='let con of allContacts' class="contacts">
     <div class="contact-info">
       name: {{ con.name }}
     </div>
-    <!-- <hr> -->
+    <hr>
     <div class="contact-info">
       address: {{ con.address }}
     </div>

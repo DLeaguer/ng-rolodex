@@ -23,16 +23,17 @@ app.get('/', (req, res) => {
   res.send('Hello')
 })
 
-app.get('/users/:id', (req, res) => {
+app.get('/users/:user_id', (req, res) => {
   console.log('\n!!!!user/:id route called in express server!!!!\n')
   console.log('\n!!!!users/:id req.body', req.body)
   console.log('user/:id req.params', req.params)
-  const { user_id } = req.params.id
+  const { user_id } = req.params
   console.log('user_id', user_id)
-  // .where( {user_id} )
   Users
+  .where( {user_id} )
   .fetchAll()
   .then( items => {
+    console.log('items.serialize', items.serialize())
     res.json(items.serialize())
   })
   .catch( err => {
@@ -40,17 +41,20 @@ app.get('/users/:id', (req, res) => {
   })
 })
 
-app.get('/contacts/:id', (req, res) => {
+app.get('/contacts/:contact_id', (req, res) => {
   console.log('\n!!!!contacts/:id route called in express server!!!!!\n')
   console.log('\n!!!!contacts/:id req.body', req.body)
   console.log('!!! contacts/:id req.params.id', req.params.id)
-  const { contacts_id } = req.params.id
+  const { contacts_id } = req.params
   console.log('{contacts_id}', {contacts_id})
   // .where( {contacts_id} )
   Contacts
+  .where( {user_id} )
   .fetchAll()
   .then( items => {
+    console.log('items.serialize', items.serialize())
     res.json(items.serialize())
+
   }) 
   .catch( err => {
     console.log('error', err)

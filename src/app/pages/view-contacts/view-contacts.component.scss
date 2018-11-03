@@ -34,20 +34,20 @@
   }
 }
 
-.people-container {
+.users-container {
   border: 1px solid greenyellow;
   display: flex;
   flex-wrap: wrap;
   margin: 1% 10%;
 }
 
-.people-title {
+.users-title {
   margin-left: 10%;
   font-weight: bold;
   color: green;
 }
 
-.people {
+.users {
   // border: 1px solid seagreen;
   width: 260px;
   background-color: aliceblue;
@@ -55,25 +55,25 @@
   margin: 3%;
 }
 
-.people-info {
+.users-info {
   // border: 1px solid fuchsia;
   font-size: 12px;
 }
 
-.planet-title {
-  margin-left: 10%;
-  font-weight: bold;
-  color: green;
-}
-
-.planets-container {
+.contacts-container {
   border: 1px solid greenyellow;
   display: flex;
   flex-wrap: wrap;
   margin: 1% 10%;
 }
 
-.planets {
+.contacts-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.contacts {
   // border: 1px solid seagreen;
   width: 260px;
   background-color: aliceblue;
@@ -81,7 +81,59 @@
   margin: 3%;
 }
 
-.planets-info {
+.contacts-info {
   // border: 1px solid fuchsia;
   font-size: 12px;
 }
+
+// .people-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .people-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .people {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .people-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }
+
+// .planet-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .planets-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .planets {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .planets-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }
