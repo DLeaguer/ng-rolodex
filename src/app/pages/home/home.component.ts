@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
    users: object[] = [];
    charName = null;
   
-   showHide() {
+   onKey(event: any) {
     this.search = document.getElementById('search');
     this.existingCards = document.getElementsByClassName('existingCards');
     this.charName = document.getElementsByClassName('charName');

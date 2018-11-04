@@ -6,7 +6,7 @@ import { BackendService } from '../../services/backend.service';
   templateUrl: './view-contacts.component.html',
   styleUrls: ['./view-contacts.component.scss']
 })
-export class ViewContactsComponent {
+export class ViewContactsComponent implements OnInit {
 
   usersTitle: string = 'USERS';
   contactsTitle: string = 'CONTACTS'
