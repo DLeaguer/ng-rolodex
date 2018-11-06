@@ -20,13 +20,23 @@
 // .test {
 //   display: none;
 // }
+#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-// .search {
-//   // border: 1px solid blue;
-//   margin-left: 20%;
-//   width: 50%;
-//   font-size: 12px;
-// }
+#pic {
+  width: 40%;
+}
+
+.search {
+  // border: 1px solid blue;
+  // margin-left: 20%;
+  // width: 50%;
+  font-size: 30px;
+}
 
 // .search-submit {
 //   border: 2px solid lightblue;
