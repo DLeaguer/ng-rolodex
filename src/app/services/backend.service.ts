@@ -7,17 +7,20 @@ import { Observable } from 'rxjs';
 })
 
 export class BackendService {
-  // base1Url: string = 'https://swapi.co/api/';
-  // planets: any[] = [];
-  // characters: any[] = [];
+  // baseUrl: string = 'http://54.185.0.112:8989';
   baseUrl: string = 'http://localhost:8989';
   users: any[] = [];
   contacts: any[] = [];
   allUsers: any[] = [];
   allContacts: any[] = [];
-
+  home: any[] = [];
 
   constructor(private http: HttpClient) {  }
+
+  // getHome() {
+  //   const url = this.baseUrl + '/home';
+  //   return this.http.get(url).toPromise();
+  // }
 
   getAllUsers() {
     // console.log('this.allUsers in backend.service called\n', this.allUsers)
@@ -42,26 +45,6 @@ export class BackendService {
     const url = this.baseUrl + '/contacts/' + id;
     return this.http.get(url).toPromise();
   }
-
-  // getCharacter(id: number) {
-  //   const url = this.base1Url + 'people/' + id;
-  //   return this.http.get(url).toPromise();
-  // }
-
-  // getPlanet(id: number) {
-  //   const url = this.base1Url + 'planets/' + id;
-  //   return this.http.get(url).toPromise();
-  // }
-
-  // addCharacters(character) {
-  //   console.log('character', character)
-  //   this.characters.push(character);
-  // }
-
-  // addPlanets(planet) {
-  //   console.log('planet', planet)
-  //   this.planets.push(planet);
-  // }
 
   register(data) {
     return Promise.resolve({});

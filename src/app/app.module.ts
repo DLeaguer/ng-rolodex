@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchComponent } from './pages/search/search.component';
 import { ViewContactsComponent } from './pages/view-contacts/view-contacts.component';
 import { CreateContactsComponent } from './pages/create-contacts/create-contacts.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -25,7 +26,8 @@ import { AuthService } from './services/auth.service';
     CreateContactsComponent,
     ProfileComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

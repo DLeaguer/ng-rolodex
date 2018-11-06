@@ -1,0 +1,167 @@
+.searchForm {
+  margin-left: 20%;
+  width: 50%;
+}
+
+#searchFormName {
+  border: 1px solid blue;
+}
+
+#searchFormName:hover {
+}
+
+.searchFormAnswer {
+  margin-left: 20%;
+  width: 50%;
+  background-color: aliceblue;
+}
+
+
+.test {
+  display: none;
+}
+
+.search {
+  // border: 1px solid blue;
+  margin-left: 20%;
+  width: 50%;
+  font-size: 12px;
+}
+
+.search-submit {
+  border: 2px solid lightblue;
+  width: 100%;
+  margin: 2% 0%;
+  
+  &:focus, &:hover {
+    background-color: lightblue; 
+    cursor: pointer;
+  }
+}
+
+.nameBox {
+  margin-left: 20%;
+  width: 50%;
+  // width: 100%;
+  
+  &:focus, &:hover {
+    background-color: lightblue; 
+    cursor: pointer;
+  }
+  
+}
+
+.users-container {
+  // border: 1px solid greenyellow;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1% 10%;
+}
+
+.users-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.existingCards {
+  // border: 1px solid seagreen;
+  display: none;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px #cccccc;
+}
+
+.users {
+  // border: 1px solid seagreen;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+}
+
+.users-info {
+  // border: 1px solid fuchsia;
+  font-size: 12px;
+}
+
+.contacts-container {
+  // border: 1px solid greenyellow;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1% 10%;
+}
+
+.contacts-title {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
+.contacts {
+  // border: 1px solid seagreen;
+  width: 260px;
+  background-color: aliceblue;
+  padding: 2.5%;
+  margin: 3%;
+}
+
+.contacts-info {
+  // border: 1px solid fuchsia;
+  font-size: 12px;
+}
+
+// .people-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .people-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .people {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .people-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }
+
+// .planet-title {
+//   margin-left: 10%;
+//   font-weight: bold;
+//   color: green;
+// }
+
+// .planets-container {
+//   border: 1px solid greenyellow;
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin: 1% 10%;
+// }
+
+// .planets {
+//   // border: 1px solid seagreen;
+//   width: 260px;
+//   background-color: aliceblue;
+//   padding: 2.5%;
+//   margin: 3%;
+// }
+
+// .planets-info {
+//   // border: 1px solid fuchsia;
+//   font-size: 12px;
+// }

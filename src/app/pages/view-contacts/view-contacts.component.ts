@@ -10,47 +10,14 @@ export class ViewContactsComponent implements OnInit {
 
   usersTitle: string = 'USERS';
   contactsTitle: string = 'CONTACTS'
-  // planet: string = 'PLANETS';
-  // people: string = 'PEOPLE';
-  // title: string = 'title: single line output';
-  // subtitle: string;
-  // data: {
-  //   search: string,
-  //   header: string,
-  //   content: string,
-  //   class: string,
-  // } = {
-  //     search: 'Search for a contact...',
-  //     header: 'data.header info',
-  //     content: 'data.content info',
-  //     class: 'search',
-  //   };
-
-  // formData: {
-  //   name: string,
-  //   email: string,
-  //   class: string,
-  // } = {
-  //     name: '',
-  //     email: '',
-  //     class: 'test',
-  //   }
-
-  // planets: any[];
-  // characters: any[];
-
+ 
   users: any
   contacts: any
   allUsers: any
   allContacts: any
 
   constructor(private backend: BackendService) {
-
-    // const subtitle: string = 'subtitle: in constructor this.subtitle = subtitle to outside subtitle';
-    // this.subtitle = subtitle;
-
-    // this.data.content = 'this.data.content in constructor'
-  }
+}
 
   ngOnInit() {
     
@@ -93,7 +60,7 @@ export class ViewContactsComponent implements OnInit {
       this.allUsers = data
     })
     .catch( err => {
-      console.log('\n*** getAllUsers ERR from view-contacts', err)
+      console.log('\n*** getAllUsers ERR from view-contacts\n', err)
     })
 
     //contacts all
@@ -103,26 +70,8 @@ export class ViewContactsComponent implements OnInit {
       this.allContacts = data
     })
     .catch( err => {
-      console.log('\n*** getAllContacts ERR from view-contacts', err)
+      console.log('\n*** getAllContacts ERR from view-contacts\n', err)
     })
-
-
-
-    // this.characters = this.backend.characters;
-
-    // this.backend.addCharacters({
-    //   name: 'ed', height: 177, mass: 77, hair_color: 'black', eye_color: 'brown', species: 'human', character: 'https://swapi.co/api/people/1/',
-    //   homeworld: 'https://swapi.co/api/planets/10/',
-    // });
-
-    // this.planets = this.backend.planets;
-
-    // this.backend.addPlanets({ name: 'Earth', terrain: 'oceans, mountains, grasslands, forests', population: '800 Billion', url: 'https://swapi.co/api/planets/1/' })
-
-    // this.characters.push({
-    //   name: 'baseem', height: 177, mass: 77, hair_color: 'blonde', eye_color: 'hazel-green', species: 'human', character: 'https://swapi.co/api/people/1/',
-    //   homeworld: 'https://swapi.co/api/planets/12/',
-    // });
 
     //  for(let i=1; i<this.users.length; i++){
     //   this.backend.getUsers(i)
@@ -156,24 +105,4 @@ export class ViewContactsComponent implements OnInit {
     //     })
     // }
   }
-
-  // title: string = 'View All Contacts';
-  // formData: {
-  //   name: string,
-  //   email: string,
-  //   class: string,
-  // } = {
-  //   name: '',
-  //   email: '',
-  //   class: 'test',
-  // }
-
-  // constructor() {
-
-  // }
-
-  // submit() {
-  //   console.log(this.formData);
-  // }
-
 }
