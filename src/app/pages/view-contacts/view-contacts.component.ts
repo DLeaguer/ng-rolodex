@@ -25,33 +25,6 @@ export class ViewContactsComponent implements OnInit {
     this.contacts = this.backend.contacts;
     this.allUsers = this.backend.allUsers;
     this.allContacts = this.backend.allContacts; 
-
-  //   this.backend.getCharacter(1)
-  //   .then((data) => {
-  //     console.log(data);
-  //     this.characters.push(data)
-  //   });
-
-    // //users by id
-    // this.backend.getUser(1)
-    // .then((data) => {
-    //   console.log('\n*** getUsers[1] from view-contacts', data)
-    //   this.users = data
-
-    // })
-    // .catch( err => {
-    //   console.log('\n**** getUsers[1] err from getUsers', err)
-    // })
-
-    // //contacts by id
-    // this.backend.getContact(1)
-    // .then(data => {
-    //   console.log('\n*** getContacts[1] from view-contacts', data)
-    //   this.contacts = data
-    // })
-    // .catch( err => {
-    //   console.log('\n*** getContacts[1] err from getContacts', err)
-    // })
     
     //users all
     this.backend.getAllUsers()
@@ -73,6 +46,27 @@ export class ViewContactsComponent implements OnInit {
       console.log('\n*** getAllContacts ERR from view-contacts\n', err)
     })
 
+    // //users by id
+    // this.backend.getUser(1)
+    // .then((data) => {
+    //   console.log('\n*** getUsers[1] from view-contacts', data)
+    //   this.users = data
+
+    // })
+    // .catch( err => {
+    //   console.log('\n**** getUsers[1] err from getUsers', err)
+    // })
+
+    // //contacts by id
+    // this.backend.getContact(1)
+    // .then(data => {
+    //   console.log('\n*** getContacts[1] from view-contacts', data)
+    //   this.contacts = data
+    // })
+    // .catch( err => {
+    //   console.log('\n*** getContacts[1] err from getContacts', err)
+    // })
+
     //  for(let i=1; i<this.users.length; i++){
     //   this.backend.getUsers(i)
     //   .then((data) => {
@@ -89,20 +83,5 @@ export class ViewContactsComponent implements OnInit {
     //   });
     //  }
 
-    // for (let i = 1; i < 5; i++) {
-    //   this.backend.getCharacter(i)
-    //     .then((data) => {
-    //       console.log(data);
-    //       this.characters.push(data)
-    //     });
-    // }
-
-    // for (let i = 1; i < 5; i++) {
-    //   this.backend.getPlanet(i)
-    //     .then((data) => {
-    //       console.log(data);
-    //       this.planets.push(data)
-    //     })
-    // }
   }
 }

@@ -17,11 +17,6 @@ export class BackendService {
 
   constructor(private http: HttpClient) {  }
 
-  // getHome() {
-  //   const url = this.baseUrl + '/home';
-  //   return this.http.get(url).toPromise();
-  // }
-
   getAllUsers() {
     // console.log('this.allUsers in backend.service called\n', this.allUsers)
     const url = this.baseUrl + '/users';
