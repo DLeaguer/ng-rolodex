@@ -30,11 +30,19 @@ input {
   padding: 15px;
   width: 100%;
   font-size: 16px;
-  color: white;
+  color: black;
   background-color: darken(salmon, 25%);
   border-radius: 10px;
   box-shadow: 3px 3px 8px 2px black;
   transition: background-color 0.5s ease-out;
 
-  &:disabled { background-color: lighten(#ddd, 5%); }
+  &:disabled { 
+    background-color: lighten(#ddd, 5%);
+    color: lighten(black, 50%)
+  }
+}
+
+.require {
+  color: #3e3e3e;
+  font-size: 12px;
 }

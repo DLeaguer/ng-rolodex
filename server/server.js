@@ -99,6 +99,7 @@ app.post('/newContact', (req, res) => {
     mobile: contact.mobile,
     home: contact.home,
     work: contact.work,
+    email: contact.email,
     twitter: contact.twitter,
     instagram: contact.instagram,
     github: contact.github,

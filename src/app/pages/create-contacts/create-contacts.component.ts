@@ -10,23 +10,43 @@ export class CreateContactsComponent {
   title: string = 'Contact Page';
   formData: {
     name: string,
+    address: string,
+    mobile: string,
+    home: string,
+    work: string,
     email: string,
+    twitter: string,
+    instagram: string,
+    github: string,
+    created_by: string,
     class: string,
   } = {
     name: '',
+    address: '',
+    mobile: '',
+    home: '',
+    work: '',
     email: '',
+    twitter: '',
+    instagram: '',
+    github: '',
+    created_by: '',
     class: 'test',
   }
 
   validName: boolean = false;
+  validMobile: boolean = false;
+  validHome: boolean = false;
+  validWork: boolean = false;
   validEmail: boolean = false;
+  validTwitter: boolean = false;
+  validInstagram: boolean = false;
+  validGithub: boolean = false;
 
-  constructor() {
-    
-  }
+  constructor() {  }
 
   validateName() {
-    console.log('validateNmae');
+    console.log('validateName');
     if (!this.formData.name) {
       this.validName = false;
     } 
@@ -38,11 +58,38 @@ export class CreateContactsComponent {
     }
   }
 
-  validateEmail() {
-    if (!this.formData.email) {
-      this.validEmail = false;
+  validateMobile() {
+    console.log('validateMobile');
+    if (this.formData.mobile.length < 10) {
+      this.validMobile = false;
+    } 
+    else {
+      this.validMobile = true;
     }
-    else if (!this.formData.email.includes('@')) {
+  }
+
+  validateHome() {
+    console.log('validateHome');
+    if (this.formData.mobile.length < 12) {
+      this.validHome = false;
+    } 
+    else {
+      this.validHome = true;
+    }
+  }
+
+  validateWork() {
+    console.log('validateWork');
+    if (this.formData.mobile.length < 12) {
+      this.validWork = false;
+    } 
+    else {
+      this.validWork = true;
+    }
+  }
+
+  validateEmail() {
+    if (!this.formData.email.includes('@')) {
       this.validEmail = false;
     }
     else if (this.formData.email.length < 3) {

@@ -13,7 +13,7 @@ export class BackendService {
   contacts: any[] = [];
   allUsers: any[] = [];
   allContacts: any[] = [];
-  home: any[] = [];
+  newContact: any[] = [];
 
   constructor(private http: HttpClient) {  }
 
@@ -41,6 +41,12 @@ export class BackendService {
     return this.http.get(url).toPromise();
   }
 
+  postContact() {
+    console.log('this.newContact in backend.service called\n', this.newContact)
+    const url = this.baseUrl + '/newContact';
+    return this.http.get(url).toPromise();
+  }
+  
   register(data) {
     return Promise.resolve({});
   }

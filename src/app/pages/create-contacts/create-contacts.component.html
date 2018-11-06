@@ -8,11 +8,45 @@
       <input type="text" name='name' placeholder="name..."
       [(ngModel)]='formData.name' (keyup)='validateName()'> 
       
-      <br><br>
-      <input type="text" name='email' placeholder="email..."
+      <br>
+      <input type="text" name='address' placeholder="address..."
+      [(ngModel)]='formData.address'>
+
+      <br>
+      <input type="text" name='mobile' placeholder="000-000-0000"
+      [(ngModel)]='formData.mobile' (keyup)='validateMobile()'>
+
+      <br>
+      <input type="text" name='home' placeholder="000-000-0000"
+      [(ngModel)]='formData.home' (keyup)='validateHome()'>
+
+      <br>
+      <input type="text" name='work' placeholder="000-000-0000"
+      [(ngModel)]='formData.work' (keyup)='validateWork()'>
+
+      <br>
+      <input type="text" name='email' placeholder="username@email.com..."
       [(ngModel)]='formData.email' (keyup)='validateEmail()'>
+
+      <br>
+      <input type="text" name='twitter' placeholder="@twitter_username..."
+      [(ngModel)]='formData.twitter'>
+
+      <br>
+      <input type="text" name='instagram' placeholder="@instagram_username..."
+      [(ngModel)]='formData.instagram'>
+
+      <br>
+      <input type="text" name='github' placeholder="github.com/username..."
+      [(ngModel)]='formData.github'>
     </form>
     
+    <div class='require'>
+      *Name & Email require more than 2 characters
+      <br>
+      *Email require '@' symbol
+    </div>
+
     <div [class]='formData.name === "admin" ? "test" : "" ' >
       {{ formData.name }}
     </div>
@@ -69,6 +103,6 @@
 </div>
 
 <br><br>
-<!-- banana in a box -->
-<!-- <button (click)='submit()' [disabled]='true'>Submit</button> -->
+banana in a box
+<button (click)='submit()' [disabled]='true'>Submit</button>
 <button (click)='submit()' [class]='formData.class'>Submit</button> -->
