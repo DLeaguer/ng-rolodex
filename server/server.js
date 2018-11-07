@@ -2,11 +2,11 @@
 
 const express = require('express');
 const app = express();
-const PORT = process.env.EXPRESS_CONTAINER_PORT || 9999
+const PORT = process.env.EXPRESS_CONTAINER_PORT
 const bodyParser = require("body-parser");
 const cors = require('cors');
 // const knex = require('./db/knex.js');
-const path = require('path');
+// const path = require('path');
 const Users = require('./db/models/users.js');
 const Contacts = require('./db/models/contacts.js');
 // const session = require('express-session');
@@ -15,9 +15,10 @@ const Contacts = require('./db/models/contacts.js');
 //Returns already parsed info/object as 'req.body'
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static("public"));
 app.use(cors());
 
+// user by id
 app.get('/users/:user_id', (req, res) => {
   console.log('\n!!!!user/:id route called in express server!!!!')
   // console.log('\n!!!!users/:id req.body\n', req.body)
@@ -37,15 +38,16 @@ app.get('/users/:user_id', (req, res) => {
   })
 })
 
-app.get('/contacts/:contact_id', (req, res) => {
+// contact by id
+app.get('/contacts/:id', (req, res) => {
   console.log('\n!!!!contacts/:id route called in express server!!!!!')
-  // console.log('\n!!!!contacts/:id req.body\n', req.body)
+  console.log('\n!!!!contacts/:id req.body\n', req.body)
   console.log('!!! contacts/:id req.params.id\n', req.params.id)
-  const { contacts_id } = req.params
-  console.log('!!!!!{contacts_id}\n', {contacts_id})
+  const { id } = req.params
+  console.log('!!!!!{id}\n', {id})
   // .where( {contacts_id} )
   Contacts
-  .where( {contact_id} )
+  .where( {id} )
   .fetchAll()
   .then( items => {
     console.log('\n!!!!!contacts/:id items.serialize\n', items.serialize())
@@ -57,6 +59,7 @@ app.get('/contacts/:contact_id', (req, res) => {
   })
 })
 
+//all users
 app.get('/users', (req, res) => {
   console.log('\n!!!!users route called in express server!!!!!')
   // console.log('\n!!! users req.body\n', req.body)
@@ -71,6 +74,7 @@ app.get('/users', (req, res) => {
   })
 });
 
+//all contacts
 app.get('/contacts', (req, res) => {
   console.log('\n!!!!contacts route called in express server!!!!!')
   // console.log('\n !!! contacts req.body\n', req.body)
@@ -86,41 +90,47 @@ app.get('/contacts', (req, res) => {
 })
 
 //POST
-app.post('/newContact', (req, res) => {
-  console.log('\nPOSTING!!!!!')
-  console.log('\nreq.body!!!!!\n')
-  console.log(req.body)
+app.post('/new', (req, res) => {
+  // console.log('\nPOSTING!!!!!')
+  // console.log('\nreq.body!!!!!\n')
+  // console.log(req.body)
   const contact = req.body
-  console.log('\ncontact!!!!!\n')
-  console.log(contact)
+  // console.log('\ncontact!!!!!\n')
+  // console.log(contact)
   const newContact = {
-    name: contact.name,
-    address: contact.address,
-    mobile: contact.mobile,
-    home: contact.home,
-    work: contact.work,
-    email: contact.email,
-    twitter: contact.twitter,
-    instagram: contact.instagram,
-    github: contact.github,
-    created_by: contact.created_by
+    name: req.body.name,
+    address: req.body.address,
+    mobile: req.body.mobile,
+    home: req.body.home,
+    work: req.body.work,
+    email: req.body.email,
+    twitter: req.body.twitter,
+    instagram: req.body.instagram,
+    github: req.body.github,
+    created_by: req.body.created_by
   }
-  console.log('\nnewContact!!!!!\n')
-  console.log(newContact)
+  // console.log('\nnewContact from server.js!!!!!\n')
+  console.log("HI", newContact);
   Contacts
   .forge(newContact)
   .save()
-  .then( () => {
-    return Contacts
+  .then( (data) => {
+  Contacts
     .fetchAll()
     .then( result => {
+      console.log('newContact result', result)
       res.json(result.serialize())
     })
     .catch( err => {
       console.log('err server.js POST/newContact', err)
+      res.json(err)
     })
   })
 })
+
+// app.post("/new", (req, res) => {
+//   res.json("hi");
+// })
 
 //DELETE
 app.put('/deleteContact', (req, res) => {

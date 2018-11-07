@@ -1,0 +1,56 @@
+<div class="page">
+  <h1>
+    {{ title }}
+  </h1>
+  <button routerLink='/view-contacts'>Back to Contacts</button>
+  <br><br>
+  <div class="container">
+    <form action="">
+      <input type="text" name='name' placeholder="name..."
+      [(ngModel)]='formData.name' (keyup)='validateName()' required> 
+      
+      <br>
+      <input type="text" name='address' placeholder="address..."
+      [(ngModel)]='formData.address'>
+
+      <br>
+      <input type="text" name='mobile' placeholder="000-000-0000"
+      [(ngModel)]='formData.mobile'>
+
+      <br>
+      <input type="text" name='home' placeholder="000-000-0000"
+      [(ngModel)]='formData.home'>
+
+      <br>
+      <input type="text" name='work' placeholder="000-000-0000"
+      [(ngModel)]='formData.work'>
+
+      <br>
+      <input type="text" name='email' placeholder="username@email.com..."
+      [(ngModel)]='formData.email' (keyup)='validateEmail()'>
+
+      <br>
+      <input type="text" name='twitter' placeholder="@twitter_username..."
+      [(ngModel)]='formData.twitter'>
+
+      <br>
+      <input type="text" name='instagram' placeholder="@instagram_username..."
+      [(ngModel)]='formData.instagram'>
+
+      <br>
+      <input type="text" name='github' placeholder="github.com/username..."
+      [(ngModel)]='formData.github'>
+
+    </form>
+    
+    <div class='require'>
+      *Name & Email require more than 2 characters
+      <br>
+      *Email require '@' symbol
+    </div>
+    
+    <br><br>
+    <button (click)='addContact()' class='btn-submit' [disabled]='isDisabled()'>Create</button>
+  </div>
+
+</div>

@@ -15,9 +15,9 @@ export class ViewContactsComponent implements OnInit {
   contacts: any
   allUsers: any
   allContacts: any
+  id: any
 
-  constructor(private backend: BackendService) {
-}
+  constructor(private backend: BackendService) {  }
 
   ngOnInit() {
     
@@ -39,13 +39,13 @@ export class ViewContactsComponent implements OnInit {
     //contacts all
     this.backend.getAllContacts()
     .then(data => {
-      // console.log('\n*** getAllContacts from view-contacts', data)
+      console.log('\n*** getAllContacts from view-contacts', data)
       this.allContacts = data
     })
     .catch( err => {
       console.log('\n*** getAllContacts ERR from view-contacts\n', err)
     })
-
+    
     // //users by id
     // this.backend.getUser(1)
     // .then((data) => {
@@ -57,15 +57,16 @@ export class ViewContactsComponent implements OnInit {
     //   console.log('\n**** getUsers[1] err from getUsers', err)
     // })
 
-    // //contacts by id
-    // this.backend.getContact(1)
-    // .then(data => {
-    //   console.log('\n*** getContacts[1] from view-contacts', data)
-    //   this.contacts = data
-    // })
-    // .catch( err => {
-    //   console.log('\n*** getContacts[1] err from getContacts', err)
-    // })
+    //contacts by id
+    this.backend.getContact(this.id)
+    .then(data => {
+      console.log('this.backend.getContact(name) =', this.id)
+      console.log('\n*** getContacts[1] from view-contacts', data)
+      this.contacts = data
+    })
+    .catch( err => {
+      console.log('\n*** getContacts[1] err from getContacts', err)
+    })
 
     //  for(let i=1; i<this.users.length; i++){
     //   this.backend.getUsers(i)

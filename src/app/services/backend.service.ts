@@ -14,6 +14,8 @@ export class BackendService {
   allUsers: any[] = [];
   allContacts: any[] = [];
   newContact: any[] = [];
+  obj: any;
+  id: any;
 
   constructor(private http: HttpClient) {  }
 
@@ -37,16 +39,31 @@ export class BackendService {
 
   getContact(id: number) {
     // console.log('this.contacts by id in backend.service called\n', this.contacts)
-    const url = this.baseUrl + '/contacts/' + id;
+    const url = this.baseUrl + '/contacts/' + this.id;
     return this.http.get(url).toPromise();
   }
 
-  postContact() {
-    console.log('this.newContact in backend.service called\n', this.newContact)
-    const url = this.baseUrl + '/newContact';
-    return this.http.get(url).toPromise();
+  createContact(contact) {
+    console.log('contact', contact)
+    this.contacts.push(contact);
   }
-  
+
+  //post new contact form
+  createNewContact(obj) {
+    const url = this.baseUrl + '/new';
+    console.log('createNewContact obj from backend.service', obj)
+    return this.http.post(url, obj)
+      .subscribe(res => {
+      console.log('added to DB')
+    });
+  }
+
+  // addContact() {
+  //   console.log('this.newContact in backend.service called\n', this.newContact)
+  //   const url = this.baseUrl + '/newContact';
+  //   return this.http.post(url).toPromise();
+  // }
+
   register(data) {
     return Promise.resolve({});
   }

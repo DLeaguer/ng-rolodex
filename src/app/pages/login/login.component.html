@@ -10,8 +10,8 @@
 
     <input type="text" name="password" placeholder="password" [(ngModel)]="loginFormData.password">
 
-    <button class="btn" (click)="login()">Login</button>
+    <button type='submit' class="btn" (click)="login()">Login</button>
 
-    {{ loginFormData | json}}
+    <!-- {{ loginFormData | json}} -->
   </form>
 </div>

@@ -1,6 +1,6 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('contacts', function(table) {
-    table.increments('contact_id').primary().notNullable();
+    table.increments('id').primary().notNullable();
     table.string('name').notNullable();
     table.timestamp('created_at').defaultTo(knex.fn.now())
     table.timestamp('updated_at').defaultTo(knex.fn.now())
@@ -14,7 +14,7 @@ exports.up = function(knex, Promise) {
     table.string('github');
     //Create the column then add foreign key
     table.integer('created_by').unsigned().notNullable();
-    table.foreign('created_by').references('user_id').inTable('users');
+    table.foreign('created_by').references('id').inTable('users');
   })
 }
 
