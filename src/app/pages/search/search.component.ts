@@ -63,6 +63,7 @@ export class SearchComponent implements OnInit {
   // }
 
    onKey(event: any) {
+     console.log('\nONKEY EVENT HERE\n')
     this.search = document.getElementById('onkeysearch');
     this.existingCards = document.getElementsByClassName('existingCards');
     this.charName = document.getElementsByClassName('charName');
