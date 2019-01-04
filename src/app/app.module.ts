@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { BackendService } from './services/backend.service';
 import { SessionService } from './services/session.service';
 import { AuthService } from './services/auth.service';
+import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthService } from './services/auth.service';
     ProfileComponent,
     HeaderComponent,
     LoginComponent,
-    SearchComponent
+    SearchComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,

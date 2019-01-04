@@ -19,17 +19,17 @@ app.use(express.static("public"));
 app.use(cors());
 
 // user by id
-app.get('/users/:user_id', (req, res) => {
+app.get('/users/:id', (req, res) => {
   console.log('\n!!!!user/:id route called in express server!!!!')
   // console.log('\n!!!!users/:id req.body\n', req.body)
   console.log('!!!!!user/:id req.params\n', req.params)
-  const { user_id } = req.params
-  console.log('!!!!!user_id\n', user_id)
+  const { id } = req.params
+  console.log('!!!!!id\n', id)
   Users
-  .where( {user_id} )
+  .where( {id} )
   .fetchAll()
   .then( items => {
-    // console.log('\n!!!!!users/:user_id items\n', items)
+    // console.log('\n!!!!!users/:id items\n', items)
     console.log('\n!!!!!users/:id items.serialize\n', items.serialize())
     res.json(items.serialize())
   })
@@ -133,22 +133,22 @@ app.post('/new', (req, res) => {
 // })
 
 //DELETE
-app.put('/deleteContact', (req, res) => {
+app.delete('/deleteContact/:id', (req, res) => {
   console.log('req.body!!!', req.body)
-  console.log('req.body.id!!!', req.body.id)
-  let id = req.body.id;
+  console.log('req.params!!!', req.params)
+  let {id} = req.params;
   console.log('id!!!', id)
   Contacts
-  // .where({ id })
-  .where('id', id)
+  .where({ id })
+  // .where('id', id)
   .destroy()
   .then( () => {
     console.log('\nserver.js Delete is working!!')
     return Contacts
     .fetchAll()
     })
-    .then( contacts => {
-      res.json( contacts.serialize())
+    .then( result => {
+      res.json( result.serialize())
     })
     .catch( err => {
       console.log('err server DELETE', err)

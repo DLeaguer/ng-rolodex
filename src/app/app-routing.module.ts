@@ -6,6 +6,7 @@ import { ViewContactsComponent } from './pages/view-contacts/view-contacts.compo
 import { CreateContactComponent } from './pages/createContact/createContact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
 
 const routes: Routes = 
 [
@@ -15,6 +16,7 @@ const routes: Routes =
   { path: 'createContact', component: CreateContactComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'contact-detail', component: ContactDetailComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

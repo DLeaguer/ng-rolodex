@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npx nodemon ./server/server.js & ng serve --host 0.0.0.0",
+    "start": "npm rebuild node-sass & ng serve --host 0.0.0.0 & npx nodemon ./server/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

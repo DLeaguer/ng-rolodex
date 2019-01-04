@@ -37,6 +37,22 @@ export class BackendService {
     return this.http.get(url).toPromise();
   }
 
+  contactDetail() {
+    const url = this.baseUrl + '/contacts/' + this.id;
+    return this.http.get(url).toPromise();
+  }
+
+  storeId(id) {
+    console.log('storeId id',id)
+    console.log('storeId this.id',this.id)
+    this.id = id
+  }
+
+  deleteContact(id) {
+    const url = this.baseUrl + '/deleteContact/' + id;
+    return this.http.delete(url).toPromise();
+  }
+
   getContact(id: number) {
     // console.log('this.contacts by id in backend.service called\n', this.contacts)
     const url = this.baseUrl + '/contacts/' + this.id;

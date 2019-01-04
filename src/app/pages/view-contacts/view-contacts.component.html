@@ -30,8 +30,8 @@
 <div class="contacts-container">
   <div *ngFor='let con of allContacts' class="contacts">
     <!-- <button (click)='getContact()')>detail</button> -->
-    <button class="contact-info" (click)="getContact()">
-      id: {{ con.id }}
+    <button class="contact-info" (click)="delete(con.id)">
+      delete
     </button>
     <div class="contact-info">
       name: {{ con.name }}

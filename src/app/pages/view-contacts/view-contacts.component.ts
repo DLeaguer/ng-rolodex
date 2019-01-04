@@ -16,8 +16,31 @@ export class ViewContactsComponent implements OnInit {
   allUsers: any
   allContacts: any
   id: any
+  deleteContact: any
 
   constructor(private backend: BackendService) {  }
+
+  //contacts by id
+  getId(id) {
+    console.log('view-contacts getId id ', id)
+    console.log('view-contacts getId this.id', this.id)
+    console.log('view-contacts this.backend.storeId', this.backend.storeId)
+    this.id = id
+    this.backend.storeId = this.id
+    console.log('view-contacts getId this.id after',this.id)
+    console.log('view-contacts getId this.backend.storeId after',this.backend.storeId)
+  }
+
+  delete(id) {
+    // console.log('delete in view-contacts id', id)
+    // this.backend.getUser(id)
+    // .then(data => {
+    //   console.log('data from delete in view-contacts',data)
+      this.deleteContact = id;
+      console.log('delete by id this.deleteContact deleting', this.deleteContact)
+      this.backend.deleteContact(this.deleteContact)
+    // })
+  }
 
   ngOnInit() {
     
@@ -25,6 +48,7 @@ export class ViewContactsComponent implements OnInit {
     this.contacts = this.backend.contacts;
     this.allUsers = this.backend.allUsers;
     this.allContacts = this.backend.allContacts; 
+    this.id = this.backend.id;
     
     //users all
     this.backend.getAllUsers()
@@ -41,6 +65,7 @@ export class ViewContactsComponent implements OnInit {
     .then(data => {
       console.log('\n*** getAllContacts from view-contacts', data)
       this.allContacts = data
+      console.log('this.allContacts\n',this.allContacts)
     })
     .catch( err => {
       console.log('\n*** getAllContacts ERR from view-contacts\n', err)
@@ -57,16 +82,16 @@ export class ViewContactsComponent implements OnInit {
     //   console.log('\n**** getUsers[1] err from getUsers', err)
     // })
 
-    //contacts by id
-    this.backend.getContact(this.id)
-    .then(data => {
-      console.log('this.backend.getContact(name) =', this.id)
-      console.log('\n*** getContacts[1] from view-contacts', data)
-      this.contacts = data
-    })
-    .catch( err => {
-      console.log('\n*** getContacts[1] err from getContacts', err)
-    })
+    // //contacts by id
+    // this.backend.getContact(id)
+    // .then(data => {
+    //   console.log('this.backend.getContact(name) =', id)
+    //   console.log('\n*** getContacts[1] from view-contacts', data)
+    //   this.contacts = data
+    // })
+    // .catch( err => {
+    //   console.log('\n*** getContacts[1] err from getContacts', err)
+    // })
 
     //  for(let i=1; i<this.users.length; i++){
     //   this.backend.getUsers(i)

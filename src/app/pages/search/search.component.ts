@@ -12,9 +12,9 @@ export class SearchComponent implements OnInit {
   search = null;
   existingContactsCards = null;
   existingCards = null;
+  charName = null;
   users: object[] = [];
   contacts: object[] = [];
-  charName = null;
   allUsers: any
   allContacts: any
   

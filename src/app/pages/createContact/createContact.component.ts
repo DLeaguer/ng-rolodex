@@ -34,7 +34,7 @@ export class CreateContactComponent implements OnInit {
     twitter: '',
     instagram: '',
     github: '',
-    created_by: 1
+    created_by: null
   }
 
   validName: boolean = false;
