@@ -73,6 +73,12 @@
   color: green;
 }
 
+.contactButton {
+  margin-left: 10%;
+  font-weight: bold;
+  color: green;
+}
+
 .contacts {
   // border: 1px solid seagreen;
   width: 260px;
@@ -84,6 +90,14 @@
 .contacts-info {
   // border: 1px solid fuchsia;
   font-size: 12px;
+}
+
+.deleteButton {
+  // margin-left: 10%;
+  font-size: 12px;
+  font-weight: bold;
+  color: green;
+  float: right;
 }
 
 // .people-container {
